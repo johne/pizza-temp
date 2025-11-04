@@ -1,5 +1,5 @@
 export const Stats = ({ dataPoints }) => {
-  const recent = dataPoints.at(-1)?.temp0;
+  const recent = dataPoints.at(-1)?.temp0 || 0;
 
   const hiLow = dataPoints.reduce(
     (acc, temp) => {
@@ -24,7 +24,9 @@ export const Stats = ({ dataPoints }) => {
       </div>
       <div className="flex gap-2">
         <div>Low</div>
-        <div className="text-right w-full">{Math.round(hiLow.low)}° f</div>
+        <div className="text-right w-full">
+          {Math.round(hiLow.low !== 10000 ? hiLow.low : 0)}° f
+        </div>
       </div>
     </div>
   );

@@ -13,6 +13,7 @@
     "@hapi/inert": "^7.1.0",
     "@hapi/nes": "^14.0.1",
     "node-fetch": "^2.7.0",
-    "spi-device": "^3.1.2"
+    "spi-device": "^3.1.2",
+    "tingodb": "^0.6.1"
   }
 }

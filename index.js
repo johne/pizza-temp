@@ -40,6 +40,19 @@ const provision = async () => {
 
   server.route({
     method: "GET",
+    path: "/history",
+    config: {
+      id: "history",
+      handler: async request => {
+        return JSON.stringify(
+          await tempManager.getHistory(request.query.secondsBack)
+        );
+      }
+    }
+  });
+
+  server.route({
+    method: "GET",
     path: "/{param*}",
     handler: {
       directory: {

@@ -1,4 +1,5 @@
 const LedManager = require("./LedManager");
+const DbManager = require("./DbManager");
 const spi = require("spi-device");
 const spiBus = 0; // SPI bus 0
 
@@ -8,6 +9,7 @@ class TempManager {
     this.temp1 = 0;
     this.temp2 = 0;
     this.ledManager = new LedManager();
+    this.dbManager = new DbManager();
     setInterval(this._checkTemp.bind(this), 15000);
     this._checkTemp();
   }
@@ -45,6 +47,7 @@ class TempManager {
     this.temp1 = this._checkDeviceTemp(1);
     this.temp2 = this.ledManager.getLastTemp();
     this.temp3 = this.ledManager.getTargetTemp();
+    await this.dbManager.insert(this.getTemps());
     this.ledManager.tempUpdated(this.getTemps());
   }
 
@@ -55,6 +58,10 @@ class TempManager {
       temp2: this.temp2,
       temp3: this.temp3
     };
+  }
+
+  async getHistory(secondsBack) {
+    return await this.dbManager.tempHistory(secondsBack);
   }
 }
 
