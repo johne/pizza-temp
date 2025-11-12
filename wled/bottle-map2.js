@@ -1,6 +1,6 @@
 const pixelsPerBottle = 11;
 
-const bottle1 = 139;
+const bottle1 = 140;
 // const bottle1 = 0;
 
 const skipIndexes = new Array(15).fill("").map((_, i) => i * 23 + 22);

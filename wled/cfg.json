@@ -32,7 +32,7 @@
   "wifi": { "sleep": false, "phy": false, "txpwr": 78 },
   "hw": {
     "led": {
-      "total": 495,
+      "total": 496,
       "maxpwr": 0,
       "ledma": 0,
       "cct": false,
@@ -46,7 +46,7 @@
       "ins": [
         {
           "start": 0,
-          "len": 116,
+          "len": 117,
           "pin": [1],
           "order": 0,
           "rev": false,
@@ -59,7 +59,7 @@
           "ledma": 55
         },
         {
-          "start": 116,
+          "start": 117,
           "len": 23,
           "pin": [3],
           "order": 1,
@@ -73,7 +73,7 @@
           "ledma": 55
         },
         {
-          "start": 139,
+          "start": 140,
           "len": 356,
           "pin": [16],
           "order": 1,
